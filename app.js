@@ -1,15 +1,16 @@
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
 app.get("/ok", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
   console.log(`Ping recebido às ${ping.getUTCHours()}:${ping.getUTCMinutes()}:${ping.getUTCSeconds()}`);
   response.sendStatus(200);
 });
-app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/index.html");
-});
+
 
 const rPball = require("./routes/8ball");
 app.use('/v1/8ball', rPball);
