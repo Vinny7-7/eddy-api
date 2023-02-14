@@ -20,6 +20,8 @@ app.use('/v1/cantadas', rCantadas);
 const rmain = require("./routes/main");
 app.use('/', rmain);
 
-app.listen(3000, function () {
-    console.log("Server is running on localhost:3000");
+const port = 3000 || process.env.PORT
+
+app.listen(port, function () {
+    console.log("Servidor online na porta: " + port);
 });
