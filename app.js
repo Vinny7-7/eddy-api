@@ -3,7 +3,6 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
 app.get("/ok", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
@@ -11,6 +10,7 @@ app.get("/ok", (request, response) => {
   response.sendStatus(200);
 });
 
+app.use("/v1/imagens", express.static(__dirname + '/public'));
 
 const rPball = require("./routes/8ball");
 app.use('/v1/8ball', rPball);
@@ -20,6 +20,8 @@ const rCantadas = require("./routes/cantadas");
 app.use('/v1/cantadas', rCantadas);
 const rmain = require("./routes/main");
 app.use('/', rmain);
+
+
 
 const port = 3000 || process.env.PORT
 
