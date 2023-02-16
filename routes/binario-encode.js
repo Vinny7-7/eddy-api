@@ -3,7 +3,7 @@ const router = express.Router();
 const deb = require("decode-encode-binary")
 
 
-router.get('/q=:q', (req, res) => {
+router.get('/:q', (req, res) => {
     let id = req.params.q
     let b = deb.encode(id)
 

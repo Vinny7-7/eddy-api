@@ -18,6 +18,8 @@ const rBe = require("./routes/binario-encode");
 app.use('/v1/binario-encode/', rBe);
 const rPball = require("./routes/8ball");
 app.use('/v1/8ball', rPball);
+const rCor = require("./routes/cor");
+app.use('/v1/cor', rCor);
 const rAbraco = require("./routes/abraco");
 app.use('/v1/imagens/abraco', rAbraco);
 const rFrases = require("./routes/pensamentos");

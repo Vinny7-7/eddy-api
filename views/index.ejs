@@ -9,20 +9,33 @@
            <h1>Eddy api</h1>
            
     </header>
-    <h1>End Points</h1>
-    
+    <h1 class="p">End Points</h1>
+    <h2>Aleatório</h2>
       <li>
-        <a href="/v1/8ball">/v1/8ball</a>
+        <a href="/v1/8ball">8ball</a>
       </li>
       <li>
-        <a href="/v1/cantadas">/v1/cantadas</a>
+        <a href="/v1/cantadas">cantadas</a>
       </li>
       <li>
-        <a href="/v1/pensamentos">/v1/pensamentos</a>
+        <a href="/v1/pensamentos">pensamentos</a>
       </li>
       <h2>Imagens</h2>
       <li>
-        <a href="/v1/imagens/abraco">/v1/abraco/[número entre 1 e 27]</a>
+        <a href="/v1/imagens/abraço">abraco</a>
+      </li>
+      <h2>Utilidades</h2>
+      <li>
+        <a href="/v1/binario-encode/q=olá">binario encode</a>
+        <p>Uso: /v1/binario-encode/[TEXTO]</p>
+      </li>
+      <li>
+        <a href="/v1/binario-decode/q=olá">binario decode</a>
+        <p>Uso: /v1/binario-decode/[TEXTO]</p>
+      </li>
+      <li>
+        <a href="/v1/cor/007fff">cor</a>
+        <p>Uso: /v1/cor/[HEX DA COR]</p>
       </li>
   </body>
   <style>
@@ -54,15 +67,15 @@ body{
            padding: 10px;
            background-image: linear-gradient(90deg, #4ca1f5, #0c7ae7);
            margin: 10px;
-       }
-
-       main>h1{
-           text-shadow: 1px 1px 2px #412b57be;
+           color: #0929df;
            text-align: center;
-           color: #000000;
        }
        h2{
            color: #000000;
+       }
+       h1.p{
+        color: #1a01ffa4;
+        text-align: center;
        }
        p{
        text-align: justify;
@@ -70,13 +83,20 @@ body{
        li{
         color: #0c7ae7;
        }
+       li>p:hover{
+        color: #0929df;
+       }
+       li:hover{
+        color: #000000;
+       }
        li>a{
         text-decoration: none;
         color: #0dce06;
        }
        li>a:hover{
-        text-decoration:underline;
+        color: #0929df;
        }
+       
 
 
   </style>
