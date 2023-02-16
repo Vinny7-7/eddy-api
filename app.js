@@ -10,10 +10,16 @@ app.get("/ok", (request, response) => {
   response.sendStatus(200);
 });
 
-app.use("/v1/imagens", express.static(__dirname + '/public'));
+app.use("/imagens", express.static(__dirname + '/public'));
 
+const rBd = require("./routes/binario-decode");
+app.use('/v1/binario-decode/', rBd);
+const rBe = require("./routes/binario-encode");
+app.use('/v1/binario-encode/', rBe);
 const rPball = require("./routes/8ball");
 app.use('/v1/8ball', rPball);
+const rAbraco = require("./routes/abraco");
+app.use('/v1/imagens/abraco', rAbraco);
 const rFrases = require("./routes/pensamentos");
 app.use('/v1/pensamentos', rFrases);
 const rCantadas = require("./routes/cantadas");
