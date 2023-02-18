@@ -12,6 +12,11 @@ app.get("/ok", (request, response) => {
 
 app.use("/imagens", express.static(__dirname + '/public'));
 
+
+const rMe = require("./routes/morse-encode");
+app.use('/v1/morse-encode/', rMe);
+const rMd = require("./routes/morse-decode");
+app.use('/v1/morse-decode/', rMd);
 const rBd = require("./routes/binario-decode");
 app.use('/v1/binario-decode/', rBd);
 const rBe = require("./routes/binario-encode");
