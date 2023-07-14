@@ -13,24 +13,25 @@ app.get("/ok", (request, response) => {
 app.use("/imagens", express.static(__dirname + '/public'));
 
 
-const rMe = require("./routes/morse-encode");
-app.use('/v1/morse-encode/', rMe);
-const rMd = require("./routes/morse-decode");
-app.use('/v1/morse-decode/', rMd);
-const rBd = require("./routes/binario-decode");
-app.use('/v1/binario-decode/', rBd);
-const rBe = require("./routes/binario-encode");
-app.use('/v1/binario-encode/', rBe);
+const rMe = require("./routes/morse");
+app.use('/v1/morse/', rMe);
+const rBe = require("./routes/binario");
+app.use('/v1/binario/', rBe);
 const rPball = require("./routes/8ball");
 app.use('/v1/8ball', rPball);
 const rCor = require("./routes/cor");
 app.use('/v1/cor', rCor);
 const rAbraco = require("./routes/abraco");
-app.use('/v1/imagens/abraco', rAbraco);
+app.use('/v1/abraco', rAbraco);
 const rFrases = require("./routes/pensamentos");
 app.use('/v1/pensamentos', rFrases);
 const rCantadas = require("./routes/cantadas");
 app.use('/v1/cantadas', rCantadas);
+const rCesar = require("./routes/cifra-de-cesar");
+app.use('/v1/cifra-de-cesar', rCesar);
+const rDicio = require("./routes/dicionario");
+app.use('/v1/dicionario', rDicio);
+
 const rmain = require("./routes/main");
 app.use('/', rmain);
 
@@ -38,6 +39,6 @@ app.use('/', rmain);
 
 const port = 3000 || process.env.PORT
 
-app.listen(port, function () {
-    console.log("Servidor online na porta: " + port);
+app.listen(port, function() {
+  console.log("Servidor online na porta: " + port);
 });
