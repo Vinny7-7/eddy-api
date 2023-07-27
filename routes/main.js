@@ -4,7 +4,6 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const endpoints = [
     { nome: '8ball (aleatório)', rota: '/v1/8ball', descricao: 'Obter uma resposta aleatória para uma pergunta.' },
-    { nome: 'abraço (imagem)', rota: '/v1/abraço', descricao: 'Obter uma imagem de abraço aleatória.' },
     { nome: 'binario codificar (utilidade)', rota: '/v1/binario/codificar/TEXTO', descricao: 'Codificar um texto para binário.' },
     { nome: 'binario decodificar (utilidade)', rota: '/v1/binario/decodificar/BINARIO', descricao: 'Decodificar um código binário para texto.' },
     { nome: 'cantadas (aleatório)', rota: '/v1/cantadas', descricao: 'Obter uma cantada aleatória.' },
