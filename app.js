@@ -21,8 +21,6 @@ const rPball = require("./routes/8ball");
 app.use('/v1/8ball', rPball);
 const rCor = require("./routes/cor");
 app.use('/v1/cor', rCor);
-const rAbraco = require("./routes/abraco");
-app.use('/v1/abraco', rAbraco);
 const rFrases = require("./routes/pensamentos");
 app.use('/v1/pensamentos', rFrases);
 const rCantadas = require("./routes/cantadas");
